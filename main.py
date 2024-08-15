@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, flash, session, abort
 from flask_bootstrap import Bootstrap
-# from flask_ckeditor import CKEditor
+from flask_ckeditor import CKEditor
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, LoginManager, login_required, current_user, logout_user
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
@@ -17,10 +17,9 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 # loading variables from .env file
 load_dotenv()
-# accessing a value
+# accessing and printing value
 app.config['SECRET_KEY'] = os.getenv("my_secret_key")
-# ------
-# ckeditor = CKEditor(app)
+ckeditor = CKEditor(app)
 Bootstrap(app)
 
 # Gravatar
@@ -194,5 +193,5 @@ def delete_post(post_id):
 
 
 if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    app.run(debug=True)
+    # app.run(host='0.0.0.0', port=5000)
