@@ -67,6 +67,7 @@ class Comments(Base):
         session.commit()
         return new_comment
 
+
 class Users(Base, UserMixin):
     __tablename__ = "user"
     id = Column(Integer, primary_key=True, nullable=False)
