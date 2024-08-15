@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, flash, session, abort
 from flask_bootstrap import Bootstrap
-from flask_ckeditor import CKEditor
+# from flask_ckeditor import CKEditor
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, LoginManager, login_required, current_user, logout_user
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
@@ -19,7 +19,8 @@ app = Flask(__name__)
 load_dotenv()
 # accessing a value
 app.config['SECRET_KEY'] = os.getenv("my_secret_key")
-ckeditor = CKEditor(app)
+# ------
+# ckeditor = CKEditor(app)
 Bootstrap(app)
 
 # Gravatar
