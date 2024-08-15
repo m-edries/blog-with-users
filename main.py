@@ -18,8 +18,7 @@ app = Flask(__name__)
 # loading variables from .env file
 load_dotenv()
 # accessing and printing value
-# app.config['SECRET_KEY'] = os.getenv("my_secret_key")
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.getenv("my_secret_key")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
